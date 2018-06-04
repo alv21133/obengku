@@ -1,0 +1,355 @@
+<html>
+    <header>
+      
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mr Bengkel</title>
+<link rel="icon" href="assets/img/icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css" />
+
+<link rel="stylesheet" href="assets\css\home_fix.css">
+<!-- <script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
+<script src="assets\js\jquery-3.3.1.min.js"></script>
+<script src="assets\js\bootstrap.min.js"></script>
+<script src="assets\js\fade.js"></script>
+<script class="cssdeck" src="assets\js\jquery.min.js"></script>
+
+
+ <!-- scrip diagnosa -->
+<script>
+    function hitung() {
+        var kedip1 = pendek.value;
+        var kedip2 = panjang.value;
+        var nilai = (kedip1 * 1) + (kedip2 * 10);
+
+
+
+        document.getElementById("hasil").innerHTML = "#H" + nilai;
+
+    }
+
+    function hapus() {
+        document.getElementById("rr").reset();
+    };
+
+
+
+    function ket() {
+        var kedip1 = pendek.value;
+        var kedip2 = panjang.value;
+        var nilai = (kedip1 * 1) + (kedip2 * 10);
+        var txt;
+        switch (nilai) {
+            case 1:
+                txt = "Kerusakan terjadi pada Manifold Absolute Preasure !";
+               
+                break;
+            case 7:
+                txt = "Kerusakan terjadin pada EOT/ECT (Engine Oil /Coolent Temperature) !";
+
+                break;
+            case 8:
+
+                txt = "Kerusakan terjadi Trotel Position !";
+                break;
+
+            case 9:
+            
+                txt = "Kerusakan terjadi pada Air Intake Teperature !";
+                break;
+
+            case 12:
+            
+                txt = "Kerusakan terjadi pada Injektor !";
+                break;
+
+            case 21:
+
+                txt = "Kerusakan terjadi pada Sensor O2/ oksigen !";
+                break;
+
+            case 29:
+
+                txt = "Kerusakan terjadi pada Idle Air Control Valve (IACV) !";
+                break;
+            case 33:
+
+                txt = "Kerusakan terjadi pada Engine Control Module (ECM) !";
+                break;
+            case 54:
+
+                txt = "Kerusakan terjadi pada Angel Sensor !";
+                break;
+
+
+            default:
+                txt = "Kode Validasi Error !  ( Cek Beam Kembali ) "
+
+        }
+        document.getElementById("sol").innerHTML = txt;
+    };
+
+    function poto() {
+        var kedip1 = pendek.value;
+        var kedip2 = panjang.value;
+        var nilai = (kedip1 * 1) + (kedip2 * 10);
+        var poto;
+        var yy;
+        switch (nilai) {
+            case 1:
+                txt = "assets/img/manipol_abs.png";
+                poto= "assets/img/chart1.jpg";
+                yy= "assets/img/do_chart2.png";
+                break;
+            case 7:
+                txt = "assets/img/eotect.png";
+                poto = "assets/img/chart3.jpg";
+                yy = "assets/img/do_chart.png";
+                break;
+            case 8:
+                txt = "assets/img/throttle.png";
+                poto = "assets/img/chart3.jpg";
+                yy = "assets/img/do_chart2.png";
+                 yy = "assets/img/do_chart.png";
+            break;
+            
+            case 9:
+                txt = "assets/img/air_intake.png";
+                poto = "assets/img/chart4.jpg";
+                 yy = "assets/img/do_chart.png";
+            break;
+
+            case 12:
+                txt = "assets/img/injektor.png";
+                poto = "assets/img/chart1.jpg";
+                yy = "assets/img/do_chart2.png";
+            break;
+
+            case 21:
+                txt = "assets/img/o2.png";
+                poto = "assets/img/chart2.jpg";
+                 yy = "assets/img/do_chart.png";
+            break;
+            case 29:
+                txt = "assets/img/iavc.png";
+                poto = "assets/img/chart2.jpg";
+                yy = "assets/img/do_chart2.png";
+            break;
+            case 33:
+                txt = "assets/img/ecm.png";
+                poto = "assets/img/chart1.jpg";
+            break;
+
+            case 54:
+                txt = "assets/img/ecm.png";
+                poto = "assets/img/chart4.jpg";
+                yy = "assets/img/do_chart2.png";
+            break;
+
+
+            default:
+                txt = "assets/img/tdk_ditemukn.jpg"
+                poto = "assets/img/tdk_ditemukn.jpg";
+                yy = "assets/img/tdk_ditemukn.jpg";
+        }
+        document.getElementById("potos").src = txt;
+        document.getElementById("potos2").src = poto;
+        document.getElementById("potos3").src = yy;
+    }
+
+    // loader function
+
+
+
+    function loading() {
+       
+       $('#loadingtime').hide().show('slow').delay(800).hide('slow');
+      
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    }
+
+// valid
+    function validasi() {
+        var nama = document.getElementById("pendek").value;
+        var email = document.getElementById("panjang").value;
+        
+        if (nama != "" && email != "" && nama <=10 && email <=10) {
+            return true;
+        } else {
+           window.alert('Form tidak boleh kosong ! input antara 0 sampai 9');
+        }
+    }
+</script>
+
+
+    </header>
+    <body>
+
+
+<nav class="navbar navbar-expand-md navbar-dark header1" style="background-color:#fdd100;">
+    <a class="navbar-brand" style="color: white" href="index.html">
+        <img class="logo1" src="assets/img/logo.png">
+    </a>
+    <button class="navbar-toggler" style="" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item warna ">
+                <a class="nav-link " href="index.html">HOME</a>
+            </li>
+            <li class="nav-item warna">
+                <a class="nav-link" href="maps.html">SERVICE</a>
+            </li>
+            <li class="nav-item warna">
+                <a class="nav-link" href="#foot">CONTACT</a>
+            </li>
+            <li class="nav-item warna">
+                <a class="nav-link" href="about.html">ABOUT</a>
+            </li>
+            <li class="col">
+                <a class="nav-link" href="#"> </a>
+            </li>
+            <li class="col">
+                <a class="nav-link" href="#"> </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div id="loadingtime" style=" background-color: black; opacity:0,2;">
+    <div id="loader"></div>
+</div>
+
+<!-- header -->
+
+           
+        <!-- loader -->
+<br>
+
+<DIv class=" container-fluid" style="margin-top:7%">
+    <div class="row">
+                <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <img src="assets/img/Honda.png" style="height:600px;">
+                </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                           
+                <div class="col-5 float-left">
+                    <div class="card">
+                        <div class="card-header bg-warning text-center" style="color: white">ERORR CODE</div>
+                        <div class="card-body">
+                            <h1 id="hasil" class=" text-center" style="color: rgb(255, 0, 0); font-size: 65px;"></h1>
+                        </div>
+                    </div>
+                </div>
+            <div class="form-group col-6 float-left">
+                <form id="rr">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <input  type="text" class="form-control text-center " id="pendek" placeholder=" Beam Pendek" title="Masukan antara 0 sampa 9">
+                    <br>
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <input   type="text" class="form-control text-center"id="panjang" placeholder=" Beam Panjang" title="Masukan antara 0 sampa 9">
+                </form>
+            
+                <button class="btn btn btn-outline-warning " style="margin-left: 25%" onclick=" validasi(); hitung ();ket();poto(); loading();">diagnosa</button>
+                <button class="btn btn btn-outline-warning " style="margin-left: 5%" onclick=" hapus(); window.location.reload();">reset</button>
+            
+            </div>
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                <div class="col-12" style=" margin-top: 15rem">
+                    <div class="card">
+                    <div class="card-header bg-warning text-center" style="color: white" >HASIL DIAGNOSA</div>
+                     <div class="card-body rounded">
+                            <h3 class="text-center" id="sol"></h3>
+                        </div>
+                    </div>
+                    </div>
+                    
+                
+            </div>
+    </div>
+    
+    </div>
+</DIv>
+
+
+
+
+
+     
+  
+               
+
+<div class="container-fluid">
+<div class=" row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+                    <img  class="fade-right fade-ani col-3 zoom_sol img-thumbnail" src="assets/img/diagnosa.jpg" id="potos" style="height: 75%;" ></img>
+                    <img  class="fade-right fade-ani col-3 zoom_sol img-thumbnail" src="assets/img/diagnosa.jpg" id="potos2" style="height: 75%;" ></img>
+                    <img  class="fade-right fade-ani col-3 zoom_sol1 img-thumbnail" src="assets/img/diagnosa.jpg" id="potos3" style="height: 75%;" ></img>
+
+
+        </div>
+        </div>
+        </div>
+       
+  
+
+
+
+       
+        </div>
+        <!-- footer -->
+
+<div class="footer" id="foot" style=" background-color:#474443;margin-top: -2rem">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <img src="assets/img/logo_footer.png" style="width:50vh; height:15vh;"></img>
+            </div>
+            <div class="col-3 " style="color: white; margin-left:10px;">
+                <h1>PERUSAHAAN</h1>
+                <h4> Tentang Kami</h4>
+                <h4>Media</h4>
+                <a href="https://id-id.facebook.com/">
+                    <img src="assets/img/fb_logo.png" style="height:4vw; margin:35px; margin-top:22%;"></img>
+                </a>
+                <a href="https://www.instagram.com/?hl=id">
+                    <img src="assets/img/ig_logo.png" style="height:4vw; margin:35px; margin-top:22%;" </img>
+                </a>
+            </div>
+            <div class="col-3" style="color: white">
+                <h1>LAYANAN</h1>
+                <h4> Service</h4>
+                <h4>Diagnosa</h4>
+                <h4>Tips</h4>
+                <a href="https://twitter.com/?lang=id">
+                    <img src="assets/img/tw_logo.png" style="height:4vw; margin:35px; margin-top:10%;"></img>
+                </a>
+                <a href="https://plus.google.com/discover">
+                    <img src="assets/img/gg_logo.png" style="height:4vw; margin:35px; margin-top:10%;"></img>
+                </a>
+            </div>
+            <div class="col-23" style="float:right;">
+
+                <img class="align-bottom" src="assets/img/bg_footer.png" style="width:45vh; height:41vh;">
+
+
+            </div>
+        </div>
+    </div>
+    </footer>
+
+            
+    </body>
+</html>

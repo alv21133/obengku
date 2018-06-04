@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html  class="no-js" ng-app="PasswordStrength">
+<head >
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Daftar</title>
+<link rel="icon" href="assets/img/icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css" />
+<link rel="stylesheet" href="assets\css\home_fix.css">
+<script src="assets\js\jquery-3.3.1.min.js"></script>
+<script src="assets\js\bootstrap.min.js"></script>
+<script src="assets\js\fade.js"></script>
+<script src="../OBENGKU-WEB/assets/js/angular.min.js"></script>	
+<script src="../OBENGKU-WEB/assets/js/zxcvbn.js	"></script>	
+
+
+
+	<style type="text/css">
+			.kotak
+			{
+				width: 750px;
+				height: 500px;
+				border-radius: 10px;
+				background-color: white;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-top: 90px;	
+				filter: alpha(opacity=40);
+				float: right;
+			}
+			.kotak2
+			{
+				width: 400px;
+				height: 900px;
+				background-image: url(assets/img/daftar.jpg);	
+			}
+			.username
+			{
+				width: 250px;
+				height: 43px;
+				border-radius: 5px;
+				margin: 10px;
+			}
+			/*.username:hover
+			{
+				background-color: zoom;
+  				-webkit-transform: scale(1.08);
+ 				transform: scale(1.08);
+				z-index: 50;
+			}*/
+			.submit
+			{
+				width: 250px;
+				height: 43px;
+				border-radius: 5px;
+				border: 0%;
+				margin-bottom: 10px;				
+			}
+			.background
+			{
+				background-image: url(assets/img/mesinedit.jpg);
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+				display: flex;
+				justify-content: center;
+			}
+			.logofb
+			{
+				margin: 5px;
+				width: 20px;
+				height: 20px;
+				transition: 
+			}
+			.logofb:hover
+			{
+				background-color: zoom;
+  				-webkit-transform: scale(1.08);
+ 				transform: scale(2.08);
+				z-index: 50;
+			}
+			.logo
+			{
+				margin-top: 10px;
+				margin-left: 50px;
+				width: 320px;
+				height: 80px;
+			}
+			.kotak3
+			{
+				width: 360px;
+				height: 380px;
+				border-radius: 10px;
+				background-color: black;
+				opacity: 0.5;
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			.teks
+			{
+				color: white;
+			}
+			input.ng-invalid {
+    			background-color: #D3D3D3;
+			}
+
+
+
+
+			
+	</style>
+
+	
+
+
+
+	<script type="text/javascript">
+		function validateForm() 
+		{
+    		var username = document.forms["myForm"]["username"].value;
+    		var email = document.forms["myForm"]["email"].value;
+    		var password = document.forms["myForm"]["password"].value;
+ 		   	if (username == "" && password == "" && email == "") 
+ 	   		{
+        		return true;
+    		}
+    		else
+    		{
+        		alert("Registration Success");
+        		return true;
+    		}
+		}
+	
+</script>
+
+</head>
+<body class="background">
+<div class="navbar-full">
+	<nav class="navbar navbar-expand-md navbar-dark" style="background-color:#fdd100">
+		<a class="navbar-brand" style="color: white" href="index.html">
+			<img class="logo1" src="assets/img/logo.png">
+		</a>
+		<button class="navbar-toggler" style="" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse " id="collapsibleNavbar">
+			<ul class="navbar-nav" style="">
+				<li class="nav-item warna ">
+					<a class="nav-link " href="index.html">HOME</a>
+				</li>
+				<li class="nav-item warna">
+					<a class="nav-link" href="maps.html">SERVICE</a>
+				</li>
+				<li class="nav-item warna">
+					<a class="nav-link" href="#foot">CONTACT</a>
+				</li>
+				<li class="nav-item warna">
+					<a class="nav-link" href="about.html">ABOUT</a>
+				</li>
+				<li class="col">
+					<a class="nav-link" href="#"> </a>
+				</li>
+				<li class="col">
+					<a class="nav-link" href="#"> </a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+<div class="row d-flex">
+	<div class="col"></div>
+		<div class="col content-center ">
+		
+
+					<form ng-app="" name="myForm" onsubmit="return validateForm()" method="post" class="kotak row">
+						<img class="kotak2 rounded-left col-xs-2"></img>
+						<img src="assets/img/logo_footer.png" style="height: 80px; margin-top:-6rem; margin-bottom: 2rem; margin-right:4rem"></img>
+						<div class="col-6">
+							<h4 class="center-block"><b>SIGN UP/MENDAFTAR</b></h4>
+							<input type="text" name="username" ng-model="myText1" placeholder="| Username" class="username form-control" required>
+							<input type="text" name="email" ng-model="myText2" placeholder="| E-mail" class="username form-control" required >
+<!-- 														
+							<input type="password" name="password" ng-model="myText3" placeholder="| Password" class="username form-control" required="wajib diisi"> -->
+							<input type="password" class="form-control ok-password username" ng-class="(joinTeamForm.password.$dirty && joinTeamForm.password.$invalid) ? 'error' : ''"
+							 id="password" name="password" placeholder="Password" ng-required="true" ng-model="password">
+							
+<div class="label password-count" ng-class="password.length > 7 ? 'label-success' : 'label-danger'" ng-cloak>
+	{{ password | passwordCount:7 }}</div>
+
+<div class="strength-meter" >
+	<div class="strength-meter-fill" data-strength="{{passwordStrength}}"></div>
+</div>
+
+							<input type="submit" name="DAFTAR" class="submit btn-warning" value="DAFTAR" alert="Your Registration Success">
+							
+							<!-- password strengh -->
+
+
+
+
+
+
+
+
+<script>
+	(function () {
+
+			angular.module('PasswordStrength', [])
+
+				.controller('FormController', function ($scope) { })
+
+				.filter('passwordCount', [function () {
+					return function (value, peak) {
+						value = angular.isString(value) ? value : '';
+						peak = isFinite(peak) ? peak : 7;
+
+						return value && (value.length > peak ? peak + '+' : value.length);
+					};
+				}])
+
+				.factory('zxcvbn', [function () {
+					return {
+						score: function () {
+							var compute = zxcvbn.apply(null, arguments);
+							return compute && compute.score;
+						}
+					};
+				}])
+
+				.directive('okPassword', ['zxcvbn', function (zxcvbn) {
+					return {
+						// restrict to only attribute and class
+						restrict: 'AC',
+
+						// use the NgModelController
+						require: 'ngModel',
+
+						// add the NgModelController as a dependency to your link function
+						link: function ($scope, $element, $attrs, ngModelCtrl) {
+							$element.on('blur change keydown', function (evt) {
+								$scope.$evalAsync(function ($scope) {
+									// update the $scope.password with the element's value
+									var pwd = $scope.password = $element.val();
+
+									// resolve password strength score using zxcvbn service
+									$scope.passwordStrength = pwd ? (pwd.length > 7 && zxcvbn.score(pwd) || 0) : null;
+
+									// define the validity criterion for okPassword constraint
+									ngModelCtrl.$setValidity('okPassword', $scope.passwordStrength >= 2);
+								});
+							});
+						}
+					};
+				}]);
+
+		})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<!-- password strengh -->
+							
+							
+							<br>
+							<h7>Sudah mempunyai akun? Login
+								<a href="login.html" class="card-link"> disini </a>
+							</h7>
+							<br>
+							<h7 style="margin-left: 130px;">or</h7>
+							<br>
+							<h7>
+								<a href="https://www.facebook.com" class="card-link">
+									<img src="assets/img/logofb.png" class="logofb"> Facebook </a>
+								<a href="https://plus.google.com" class="card-link">
+									<img src="assets/img/google+.png" class="logofb"> Google+ </a>
+							</h7>
+						</div>
+					</form>
+
+
+			</div>
+		<div class="col"></div>
+	</div>
+
+
+<div class="footer" id="foot" style=" background-color:#474443;margin-top:8rem">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-3">
+				<img src="assets/img/logo_footer.png" style="width:50vh; height:15vh;"></img>
+			</div>
+			<div class="col-3 " style="color: white; margin-left:10px;">
+				<h1>PERUSAHAAN</h1>
+				<h4> Tentang Kami</h4>
+				<h4>Media</h4>
+				<a href="https://id-id.facebook.com/">
+					<img src="assets/img/fb_logo.png" style="height:4vw; margin:35px; margin-top:22%;"></img>
+				</a>
+				<a href="https://www.instagram.com/?hl=id">
+					<img src="assets/img/ig_logo.png" style="height:4vw; margin:35px; margin-top:22%;" </img>
+				</a>
+			</div>
+			<div class="col-3" style="color: white">
+				<h1>LAYANAN</h1>
+				<h4> Service</h4>
+				<h4>Diagnosa</h4>
+				<h4>Tips</h4>
+				<a href="https://twitter.com/?lang=id">
+					<img src="assets/img/tw_logo.png" style="height:4vw; margin:35px; margin-top:10%;"></img>
+				</a>
+				<a href="https://plus.google.com/discover">
+					<img src="assets/img/gg_logo.png" style="height:4vw; margin:35px; margin-top:10%;"></img>
+				</a>
+			</div>
+			<div class="col-23" style="float:right;">
+
+				<img class="align-bottom" src="assets/img/bg_footer.png" style="width:45vh; height:41vh;">
+
+
+			</div>
+		</div>
+	</div>
+	</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mr Bengkel</title>
+<link rel="icon" href="assets/img/icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css" />
+
+<link rel="stylesheet" href="assets\css\home_fix.css">
+<!-- <script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
+<script src="assets\js\jquery-3.3.1.min.js"></script>
+<script src="assets\js\bootstrap.min.js"></script>
+<script src="assets\js\fade.js"></script>
+<script class="cssdeck" src="assets\js\jquery.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+	
+	<style type="text/css">
+			.kotak
+			{
+				width: 400px;
+				height: 500px;
+				border-radius: 10px;
+				background-color: orange;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-top: 90px;	
+				filter: alpha(opacity=40);
+				float: right;
+				opacity: 0.9;
+			}
+			.username
+			{
+				width: 300px;
+				height: 43px;
+				border-radius: 5px;
+				margin: 10px;
+			}
+/*			.username:hover
+			{
+				background-color: zoom;
+  				-webkit-transform: scale(1.08);
+ 				transform: scale(1.08);
+				z-index: 50;
+			}*/
+			.submit
+			{
+				width: 300px;
+				height: 43px;
+				border-radius: 5px;
+				border: 0%;
+				margin-bottom: 10px;
+			}
+			.background
+			{
+				background-image: url(assets/img/mesinedit.jpg);
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+				display: flex;
+				justify-content: center;
+			}
+			.sign
+			{
+				font-style: gotham;
+			}
+			.logofb
+			{
+				margin: 5px;
+				width: 20px;
+				height: 20px;
+				transition: 
+			}
+			.logofb:hover
+			{
+				background-color: zoom;
+  				-webkit-transform: scale(1.08);
+ 				transform: scale(2.08);
+				z-index: 50;
+			}
+			.logo
+			{
+				margin-bottom: 40px;
+				width: 320px;
+				height: 75px;
+			}
+			input.ng-invalid {
+    			background-color: #D3D3D3;
+			}
+	</style>
+
+
+	<script type="text/javascript">
+
+			function cek()
+		{  
+
+					
+    		var username = document.forms["myForm"]["username"].value;
+    		var password = document.forms["myForm"]["password"].value;
+		 		   	if (username == "sasori" && password == "root" )
+ 	   			{
+			
+						  var response = grecaptcha.getResponse();
+
+						  if (response.length == 0){
+
+								alert("Anda Belum Mengisi Capta !");
+
+						  }else{
+							  window.location="dashboard.html"
+						  }		
+					}
+					else
+    		 		{
+					alert("Maaf Username dan Password salah !");
+				
+
+					};
+
+				
+
+
+
+		}
+	</script>
+	
+	
+</head>
+<body class="background">
+
+ <div class="navbar-full">
+  <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#fdd100">
+        <a class="navbar-brand" style="color: white" href="index.html"><img class="logo1"src="assets/img/logo.png"></a>
+        <button class="navbar-toggler" style="" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+            <ul class="navbar-nav" style="">
+                <li class="nav-item warna ">
+                    <a class="nav-link " href="index.html">HOME</a>
+                </li>
+                <li class="nav-item warna">
+                    <a class="nav-link" href="maps.html">SERVICE</a>
+                </li>
+                <li class="nav-item warna">
+                    <a class="nav-link" href="#foot">CONTACT</a>
+                </li>
+                <li class="nav-item warna">
+                    <a class="nav-link" href="about.html">ABOUT</a>
+                </li>
+                <li class="col">
+                    <a class="nav-link" href="#">    </a>
+                </li>
+                <li class="col">
+                    <a class="nav-link" href="#">    </a>
+                </li>              
+            </ul>
+       
+        </div>
+	</nav>
+	 <div  class="container-fluid " >
+
+	 		
+
+	<!-- header -->
+
+<br>	<div class="row d-flex">
+			<div class="col"></div>
+		<div class="col content-center ">
+		<form ng-app="" name="myForm" class="kotak col-xs-6">
+			<img src="assets/img/logo.png" class="logo">
+			<h4 class="sign center-block" >MASUK</h4>
+			<input type="text" name="username" ng-model="myText1" placeholder="| Username" class="username form-control"required="wajib diisi">
+			<input type="password" name="password" ng-model="myText2" placeholder="| Password" class="username form-control"required="wajib diisi">
+			
+			 <div class="form-group">
+                     <div class="g-recaptcha" data-sitekey="6LfZN1sUAAAAAK7jcj-hw7qI7geqi9X8Q9ma5UMT"></div>
+             </div>
+
+			<input type="submit" name="submit" class="submit btn-dark" value="LOG IN" href="https://facebook.com" onclick="cek()">
+			<h7> <a href="https://www.facebook.com" class="card-link"> <img src="assets/img/logofb.png" class="logofb"> Facebook </a> <a href="https://plus.google.com" class="card-link"><img src="assets/img/google+.png" class="logofb"> Google+ </a></h7>
+		</form>
+			</div>	
+		<div class="col"></div>
+	</div>
+	</div>
+	
+	
+<div class="footer" id="foot" style=" background-color:#474443;margin-top: 4rem">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <img src="assets/img/logo_footer.png" style="width:50vh; height:15vh;"></img>
+            </div>
+            <div class="col-3 " style="color: white; margin-left:10px;">
+                <h1>PERUSAHAAN</h1>
+                <h4> Tentang Kami</h4>
+                <h4>Media</h4>
+                <a href="https://id-id.facebook.com/">
+                    <img src="assets/img/fb_logo.png" style="height:4vw; margin:35px; margin-top:22%;"></img>
+                </a>
+                <a href="https://www.instagram.com/?hl=id">
+                    <img src="assets/img/ig_logo.png" style="height:4vw; margin:35px; margin-top:22%;" ></img>
+                </a>
+            </div>
+            <div class="col-3" style="color: white">
+                <h1>LAYANAN</h1>
+                <h4> Service</h4>
+                <h4>Diagnosa</h4>
+                <h4>Tips</h4>
+                <a href="https://twitter.com/?lang=id">
+                    <img src="assets/img/tw_logo.png" style="height:4vw; margin:35px; margin-top:10%;"></img>
+                </a>
+                <a href="https://plus.google.com/discover">
+                    <img src="assets/img/gg_logo.png" style="height:4vw; margin:35px; margin-top:10%;"></img>
+                </a>
+            </div>
+            <div class="col-23" style="float:right;">
+
+                <img class="align-bottom" src="assets/img/bg_footer.png" style="width:45vh; height:41vh;">
+
+
+            </div>
+        </div>
+    </div>
+    </footer>
+
+
+
+
+</body>
+</html>
